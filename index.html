@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selene | Brafitting i bielizna damska w Szczecinie</title>
+  <meta name="description" content="Selene w Szczecinie. Kameralny salon bielizny damskiej i profesjonalny brafitting. Umów wizytę przez WhatsApp." />
+  <style>
+    :root {
+      --bg: #fff7f2;
+      --ink: #2f1f22;
+      --muted: #725f63;
+      --wine: #8d1420;
+      --wine-dark: #5f0b13;
+      --rose: #c98b8d;
+      --cream: #fffaf4;
+      --gold: #d0a15d;
+      --glass: rgba(255, 250, 244, .68);
+      --glass-strong: rgba(255, 250, 244, .82);
+      --border: rgba(255, 255, 255, .48);
+      --shadow: 0 28px 80px rgba(66, 28, 32, .18);
+      --radius: 30px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(201, 139, 141, .38), transparent 34rem),
+        radial-gradient(circle at 80% 10%, rgba(208, 161, 93, .22), transparent 32rem),
+        linear-gradient(180deg, var(--bg), #fff);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+
+    .glass {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 247, 242, .72);
+      border-bottom: 1px solid rgba(141, 20, 32, .12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 158px; height: auto; }
+
+    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: .96rem; }
+    .nav-links a:hover { color: var(--wine); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--wine), var(--wine-dark));
+      color: white;
+      padding: 13px 20px;
+      font-weight: 780;
+      box-shadow: 0 18px 38px rgba(141, 20, 32, .28);
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 22px 50px rgba(141, 20, 32, .34); }
+    .btn.secondary { background: rgba(255,255,255,.72); color: var(--wine-dark); box-shadow: inset 0 0 0 1px rgba(141,20,32,.18); }
+
+    .hero {
+      min-height: calc(100vh - 82px);
+      display: grid;
+      align-items: center;
+      position: relative;
+      padding: 78px 0;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(47,31,34,.72), rgba(47,31,34,.34), rgba(47,31,34,.10)),
+        url("images/selene-studio-glamour.png") center / cover no-repeat;
+      transform: scale(1.02);
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 34rem);
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-panel {
+      border-radius: var(--radius);
+      padding: clamp(24px, 5vw, 48px);
+      color: white;
+      background: rgba(47, 31, 34, .42);
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow: 0 30px 90px rgba(0,0,0,.24);
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+    }
+
+    .hero-panel .lead { color: rgba(255,255,255,.88); }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,.36);
+      background: rgba(255,255,255,.16);
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 750;
+      font-size: .9rem;
+    }
+
+    h1, h2, h3 { line-height: 1.07; letter-spacing: -.045em; margin: 0; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.8rem); margin-top: 22px; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+    h3 { font-size: 1.32rem; }
+    .lead { color: var(--muted); font-size: clamp(1.06rem, 2vw, 1.24rem); max-width: 640px; margin: 24px 0 0; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+    .hero-card {
+      border-radius: var(--radius);
+      padding: 28px;
+      background: rgba(255, 250, 244, .78);
+      border: 1px solid rgba(255,255,255,.5);
+      backdrop-filter: blur(20px) saturate(135%);
+      -webkit-backdrop-filter: blur(20px) saturate(135%);
+      box-shadow: var(--shadow);
+    }
+
+    .stars { color: var(--gold); letter-spacing: 3px; font-size: 1.3rem; margin-bottom: 18px; }
+    .quote-large { font-family: Georgia, serif; font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1.25; margin: 0; }
+    .quote-author { color: var(--muted); margin-top: 18px; font-weight: 720; }
+
+    section { padding: 78px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
+    .section-head p { color: var(--muted); max-width: 570px; margin: 0; }
+
+    .cards, .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card, .review, .booking, .contact-card {
+      border-radius: 26px;
+      padding: 24px;
+      background: var(--glass-strong);
+      border: 1px solid rgba(255,255,255,.55);
+      box-shadow: 0 18px 55px rgba(66, 28, 32, .10);
+      backdrop-filter: blur(18px) saturate(130%);
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(141,20,32,.10);
+      color: var(--wine);
+      margin-bottom: 18px;
+      font-size: 1.3rem;
+    }
+
+    .card p, .review p, .booking-note, .contact-list { color: var(--muted); }
+    .review p { margin: 10px 0 18px; }
+    .review strong { display: block; }
+
+    .studio-strip {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 420px;
+      background: url("images/selene-studio-glamour.png") center / cover no-repeat;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .studio-strip::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(47,31,34,.68), rgba(47,31,34,.18));
+    }
+
+    .studio-caption {
+      position: absolute;
+      z-index: 1;
+      left: clamp(20px, 5vw, 48px);
+      bottom: clamp(20px, 5vw, 42px);
+      max-width: 520px;
+      color: white;
+    }
+
+    .booking { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
+    form { display: grid; gap: 14px; }
+    label { font-weight: 760; font-size: .92rem; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(117,103,107,.22);
+      border-radius: 16px;
+      padding: 13px 14px;
+      background: rgba(255,255,255,.82);
+      font: inherit;
+      color: var(--ink);
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--wine); box-shadow: 0 0 0 4px rgba(141,20,32,.12); }
+    textarea { min-height: 105px; resize: vertical; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 26px; align-items: start; }
+    .contact-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
+    .map-wrap { overflow: hidden; border-radius: 26px; border: 1px solid rgba(255,255,255,.55); box-shadow: var(--shadow); }
+    iframe { width: 100%; height: 410px; border: 0; display: block; }
+
+    footer { padding: 34px 0; border-top: 1px solid rgba(141,20,32,.12); color: var(--muted); font-size: .94rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero-grid, .booking, .contact-grid { grid-template-columns: 1fr; }
+      .cards, .reviews { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .brand img { width: 132px; }
+    }
+
+    @media (max-width: 560px) {
+      .two { grid-template-columns: 1fr; }
+      section { padding: 50px 0; }
+      .hero { padding: 48px 0; }
+      .hero-panel, .hero-card, .booking { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Selene bielizna damska">
+        <img src="images/selene-logo.png" alt="Selene bielizna damska" />
+      </a>
+      <nav class="nav-links" aria-label="Główna nawigacja">
+        <a href="#brafitting">Brafitting</a>
+        <a href="#salon">Salon</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#umow">Umów wizytę</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-panel">
+          <span class="eyebrow">Selene • brafitting i bielizna damska w Szczecinie</span>
+          <h1>Biustonosz, który pasuje do Ciebie. Nie odwrotnie.</h1>
+          <p class="lead">Kameralna konsultacja, cierpliwa rozmowa i fachowy dobór bielizny w salonie, który ma atmosferę ciepłego buduaru i precyzję pracowni na miarę.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85." target="_blank" rel="noopener">Umów przez WhatsApp</a>
+            <a class="btn secondary" href="#opinie">Zobacz opinie klientek</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Wyróżniona opinia">
+          <div class="stars">★★★★★</div>
+          <p class="quote-large">„Nareszcie miejsce, w którym dobrałam idealną bieliznę. Fachowo i z uśmiechem.”</p>
+          <p class="quote-author">Opinia klientki z Google</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="brafitting">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tu zaczyna się wygoda</h2>
+          <p>Brafitting to nie tylko rozmiar z metki. To dobór kroju, obwodu, miseczki i konstrukcji do Twojego ciała, stylu życia oraz tego, czego naprawdę potrzebujesz.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">♡</div><h3>Rozmowa bez pośpiechu</h3><p>Najpierw słuchamy: co uwiera, czego brakuje, jaki efekt lubisz i w czym chcesz czuć się swobodnie.</p></article>
+          <article class="card"><div class="icon">✦</div><h3>Dobór do sylwetki</h3><p>Sprawdzamy nie tylko rozmiar, ale też kształt, rozstaw, podtrzymanie i komfort w ruchu.</p></article>
+          <article class="card"><div class="icon">✓</div><h3>Bez presji zakupowej</h3><p>Klientki cenią rzeczowe doradztwo, szczerość i pomoc bez naciągania. Masz wyjść zadowolona.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="salon">
+      <div class="container studio-strip">
+        <div class="studio-caption">
+          <span class="eyebrow">Wnętrze salonu</span>
+          <h2>Elegancko, kameralnie, z klasą</h2>
+          <p>Jasne światło, ceglane sklepienia i starannie dobrana ekspozycja tworzą przestrzeń, w której łatwiej poczuć się swobodnie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="opinie">
+      <div class="container">
+        <div class="section-head">
+          <h2>Klientki wracają po komfort</h2>
+          <p>Najczęściej powtarzają się trzy słowa: profesjonalnie, cierpliwie, z uśmiechem. To najlepszy fundament strony wizytówki.</p>
+        </div>
+        <div class="reviews">
+          <article class="review"><div class="stars">★★★★★</div><p>„Cudowny sklep z jeszcze bardziej cudowną właścicielką, która poświęci każdej klientce dużo uwagi.”</p><strong>Karolina Czarnecka</strong><small>Opinia z Google</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>„Pani zna się na rzeczy, ma świetne podejście do klientki. Atmosfera na luzie, ale rzeczowo.”</p><strong>Arabictree</strong><small>Opinia z Google</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>„Nigdy nie miałam tak dobrze dobranego stanika. Serdecznie polecam.”</p><strong>Julia</strong><small>Opinia z Google</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>„Rewelacyjna pomoc w doborze i przymierzaniu. Bez naciągania finansowego.”</p><strong>kbiel</strong><small>Opinia z Google</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>„Fantastyczna obsługa i produkty wysokiej jakości. Zdecydowanie polecam.”</p><strong>Michalina M.</strong><small>Opinia z Google</small></article>
+          <article class="review"><div class="stars">★★★★★</div><p>„The most professional service. Knowledgeable, friendly and patient.”</p><strong>Marta Cunniffe</strong><small>Opinia z Google</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="umow">
+      <div class="container booking">
+        <div>
+          <span class="eyebrow">Rezerwacja wizyty</span>
+          <h2>Umów brafitting w dogodnym terminie</h2>
+          <p class="booking-note">Formularz przygotuje gotową wiadomość na WhatsApp. Klientka wybiera dzień, godzinę i wysyła prośbę o rezerwację bez zakładania konta ani logowania.</p>
+          <ul class="contact-list">
+            <li><strong>Czas wizyty:</strong> ok. 30-45 minut</li>
+            <li><strong>Dla kogo:</strong> dla każdej kobiety, niezależnie od wieku i rozmiaru</li>
+            <li><strong>Potwierdzenie:</strong> telefonicznie lub przez WhatsApp</li>
+          </ul>
+        </div>
+        <form id="bookingForm">
+          <div class="two"><div><label for="name">Imię i nazwisko</label><input id="name" name="name" autocomplete="name" required /></div><div><label for="phone">Telefon</label><input id="phone" name="phone" autocomplete="tel" required /></div></div>
+          <div class="two"><div><label for="date">Preferowany dzień</label><input id="date" name="date" type="date" required /></div><div><label for="time">Preferowana godzina</label><select id="time" name="time" required><option value="">Wybierz godzinę</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option></select></div></div>
+          <div><label for="message">Krótka wiadomość</label><textarea id="message" name="message" placeholder="Np. szukam biustonosza codziennego, po ciąży, sportowego albo nie znam aktualnego rozmiaru."></textarea></div>
+          <button class="btn" type="submit">Wyślij prośbę przez WhatsApp</button>
+          <small class="booking-note">Kliknięcie otworzy WhatsApp z wypełnioną wiadomością. Termin wymaga potwierdzenia.</small>
+        </form>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Znajdź nas</h2>
+          <p class="lead">Masz pytanie albo chcesz upewnić się, czy dany termin jest dostępny? Zadzwoń lub wyślij wiadomość.</p>
+          <ul class="contact-list">
+            <li><strong>Adres:</strong> Edmunda Bałuki 4, 70-406 Szczecin</li>
+            <li><strong>Telefon:</strong> <a href="tel:+48507074902">+48 507 074 902</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/48507074902" target="_blank" rel="noopener">napisz do Selene</a></li>
+            <li><strong>Godziny:</strong> wt.-pt. 11:00-18:00, sob. 11:00-16:00, pon. i niedz. zamknięte</li>
+          </ul>
+        </div>
+        <div class="map-wrap">
+          <iframe title="Mapa dojazdu do Selene" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Edmunda%20Ba%C5%82uki%204%2C%2070-406%20Szczecin&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Selene</span>
+      <span>Bielizna damska • brafitting • Szczecin</span>
+    </div>
+  </footer>
+
+  <script>
+    const whatsappNumber = "48507074902";
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const body = [
+        "Dzień dobry,",
+        "",
+        "chciałabym umówić wizytę brafittingową w Selene.",
+        "",
+        `Imię i nazwisko: ${data.get("name")}`,
+        `Telefon: ${data.get("phone")}`,
+        `Preferowany dzień: ${data.get("date")}`,
+        `Preferowana godzina: ${data.get("time")}`,
+        `Wiadomość: ${data.get("message") || "-"}`,
+        "",
+        "Proszę o potwierdzenie terminu."
+      ].join("\n");
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`, "_blank");
+    });
+  </script>
+</body>
+</html>
