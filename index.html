@@ -4,72 +4,145 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Selene | Brafitting i bielizna damska w Szczecinie</title>
-  <meta name="description" content="Selene w Szczecinie. Kameralny salon bielizny damskiej i profesjonalny brafitting. Umów wizytę przez WhatsApp." />
+  <meta name="description" content="Selene w Szczecinie. Kameralny salon bielizny damskiej, profesjonalny brafitting i wygodna rezerwacja wizyty przez WhatsApp." />
+  <meta name="theme-color" content="#7b111b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #fff7f2;
-      --ink: #2f1f22;
-      --muted: #725f63;
+      --cream: #fff8f1;
+      --cream-2: #fffdf8;
+      --ink: #2e1b1f;
+      --muted: #705d61;
       --wine: #8d1420;
-      --wine-dark: #5f0b13;
-      --rose: #c98b8d;
-      --cream: #fffaf4;
-      --gold: #d0a15d;
-      --glass: rgba(255, 250, 244, .68);
-      --glass-strong: rgba(255, 250, 244, .82);
-      --border: rgba(255, 255, 255, .48);
-      --shadow: 0 28px 80px rgba(66, 28, 32, .18);
-      --radius: 30px;
+      --wine-dark: #5e0a12;
+      --wine-soft: rgba(141, 20, 32, .12);
+      --rose: #d7aaa5;
+      --gold: #d4a765;
+      --glass: rgba(255, 250, 244, .78);
+      --glass-dark: rgba(43, 24, 28, .58);
+      --line: rgba(141, 20, 32, .13);
+      --white-line: rgba(255, 255, 255, .42);
+      --shadow: 0 26px 80px rgba(61, 24, 29, .16);
+      --shadow-soft: 0 16px 48px rgba(61, 24, 29, .10);
+      --radius: 32px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(201, 139, 141, .38), transparent 34rem),
-        radial-gradient(circle at 80% 10%, rgba(208, 161, 93, .22), transparent 32rem),
-        linear-gradient(180deg, var(--bg), #fff);
-      line-height: 1.6;
+        radial-gradient(circle at 8% 6%, rgba(215, 170, 165, .48), transparent 36rem),
+        radial-gradient(circle at 88% 10%, rgba(212, 167, 101, .24), transparent 34rem),
+        linear-gradient(180deg, var(--cream), var(--cream-2) 42%, #fff);
+      line-height: 1.68;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(141, 20, 32, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(141, 20, 32, .025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, transparent, black 20%, black 78%, transparent);
+      z-index: -5;
     }
 
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-    .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
     .glass {
       background: var(--glass);
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, .62);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(22px) saturate(140%);
-      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      backdrop-filter: blur(24px) saturate(145%);
+      -webkit-backdrop-filter: blur(24px) saturate(145%);
+    }
+
+    .lux-title {
+      font-family: "Playfair Display", Georgia, serif;
+      letter-spacing: -.045em;
+      line-height: .98;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(255, 247, 242, .72);
-      border-bottom: 1px solid rgba(141, 20, 32, .12);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      z-index: 100;
+      background: rgba(255, 248, 241, .82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px) saturate(150%);
+      -webkit-backdrop-filter: blur(20px) saturate(150%);
     }
 
     .nav {
-      min-height: 82px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
-    .brand { display: flex; align-items: center; gap: 14px; }
-    .brand img { width: 158px; height: auto; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: .96rem; }
+    .brand img {
+      width: 162px;
+      height: auto;
+      filter: drop-shadow(0 6px 14px rgba(141, 20, 32, .10));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .96rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2px;
+      height: 1px;
+      background: var(--wine);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .22s ease;
+    }
+
     .nav-links a:hover { color: var(--wine); }
+    .nav-links a:hover::after { transform: scaleX(1); }
 
     .btn {
       display: inline-flex;
@@ -80,192 +153,617 @@
       border-radius: 999px;
       background: linear-gradient(135deg, var(--wine), var(--wine-dark));
       color: white;
-      padding: 13px 20px;
-      font-weight: 780;
-      box-shadow: 0 18px 38px rgba(141, 20, 32, .28);
+      padding: 14px 22px;
+      font-weight: 800;
+      font-size: .98rem;
+      box-shadow: 0 18px 40px rgba(141, 20, 32, .28);
       cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+      white-space: nowrap;
     }
 
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 22px 50px rgba(141, 20, 32, .34); }
-    .btn.secondary { background: rgba(255,255,255,.72); color: var(--wine-dark); box-shadow: inset 0 0 0 1px rgba(141,20,32,.18); }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 56px rgba(141, 20, 32, .36);
+      filter: saturate(1.06);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, .78);
+      color: var(--wine-dark);
+      box-shadow: inset 0 0 0 1px rgba(141, 20, 32, .18), 0 12px 32px rgba(61, 24, 29, .08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+      gap: 9px;
+      border: 1px solid rgba(255, 255, 255, .38);
+      background: rgba(255, 255, 255, .16);
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: inherit;
+      font-weight: 800;
+      font-size: .86rem;
+      letter-spacing: .01em;
+    }
 
     .hero {
-      min-height: calc(100vh - 82px);
+      position: relative;
+      min-height: calc(100svh - 78px);
       display: grid;
       align-items: center;
-      position: relative;
-      padding: 78px 0;
+      padding: 76px 0;
       overflow: hidden;
+      isolation: isolate;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
+      z-index: -3;
       background:
-        linear-gradient(90deg, rgba(47,31,34,.72), rgba(47,31,34,.34), rgba(47,31,34,.10)),
+        linear-gradient(90deg, rgba(34, 18, 21, .78), rgba(34, 18, 21, .43) 48%, rgba(34, 18, 21, .16)),
         url("images/selene-studio-glamour.png") center / cover no-repeat;
       transform: scale(1.02);
-      z-index: -2;
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 34rem);
-      z-index: -1;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 24% 32%, rgba(255, 255, 255, .24), transparent 30rem),
+        radial-gradient(circle at 70% 10%, rgba(212, 167, 101, .20), transparent 34rem);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 36px;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 32px;
       align-items: center;
     }
 
     .hero-panel {
-      border-radius: var(--radius);
-      padding: clamp(24px, 5vw, 48px);
-      color: white;
-      background: rgba(47, 31, 34, .42);
-      border: 1px solid rgba(255,255,255,.28);
-      box-shadow: 0 30px 90px rgba(0,0,0,.24);
-      backdrop-filter: blur(18px) saturate(130%);
-      -webkit-backdrop-filter: blur(18px) saturate(130%);
-    }
-
-    .hero-panel .lead { color: rgba(255,255,255,.88); }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid rgba(255,255,255,.36);
-      background: rgba(255,255,255,.16);
-      padding: 8px 13px;
-      border-radius: 999px;
+      max-width: 650px;
       color: #fff;
-      font-weight: 750;
-      font-size: .9rem;
+      border-radius: var(--radius);
+      padding: clamp(28px, 5vw, 52px);
+      background: var(--glass-dark);
+      border: 1px solid rgba(255, 255, 255, .28);
+      box-shadow: 0 34px 90px rgba(0, 0, 0, .30);
+      backdrop-filter: blur(24px) saturate(145%);
+      -webkit-backdrop-filter: blur(24px) saturate(145%);
     }
 
-    h1, h2, h3 { line-height: 1.07; letter-spacing: -.045em; margin: 0; }
-    h1 { font-size: clamp(2.7rem, 7vw, 5.8rem); margin-top: 22px; }
-    h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); }
-    h3 { font-size: 1.32rem; }
-    .lead { color: var(--muted); font-size: clamp(1.06rem, 2vw, 1.24rem); max-width: 640px; margin: 24px 0 0; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 22px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      line-height: .96;
+      letter-spacing: -.055em;
+      text-wrap: balance;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.35rem, 4.5vw, 4rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 1.28rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.5vw, 1.23rem);
+      line-height: 1.72;
+    }
+
+    .hero-panel .lead {
+      color: rgba(255, 255, 255, .88);
+      max-width: 590px;
+      font-size: clamp(1.08rem, 1.5vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
 
     .hero-card {
+      justify-self: end;
+      max-width: 440px;
       border-radius: var(--radius);
-      padding: 28px;
-      background: rgba(255, 250, 244, .78);
-      border: 1px solid rgba(255,255,255,.5);
-      backdrop-filter: blur(20px) saturate(135%);
-      -webkit-backdrop-filter: blur(20px) saturate(135%);
+      padding: clamp(24px, 4vw, 34px);
+      background: rgba(255, 250, 244, .82);
+      border: 1px solid rgba(255, 255, 255, .62);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(26px) saturate(145%);
+      -webkit-backdrop-filter: blur(26px) saturate(145%);
     }
 
-    .stars { color: var(--gold); letter-spacing: 3px; font-size: 1.3rem; margin-bottom: 18px; }
-    .quote-large { font-family: Georgia, serif; font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1.25; margin: 0; }
-    .quote-author { color: var(--muted); margin-top: 18px; font-weight: 720; }
+    .stars {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 1.24rem;
+      margin-bottom: 16px;
+    }
 
-    section { padding: 78px 0; }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
-    .section-head p { color: var(--muted); max-width: 570px; margin: 0; }
+    .quote-large {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      line-height: 1.24;
+      letter-spacing: -.025em;
+    }
 
-    .cards, .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card, .review, .booking, .contact-card {
-      border-radius: 26px;
-      padding: 24px;
-      background: var(--glass-strong);
-      border: 1px solid rgba(255,255,255,.55);
-      box-shadow: 0 18px 55px rgba(66, 28, 32, .10);
-      backdrop-filter: blur(18px) saturate(130%);
-      -webkit-backdrop-filter: blur(18px) saturate(130%);
+    .quote-author {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .88fr 1fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.07rem;
+    }
+
+    .cards,
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card,
+    .review,
+    .booking,
+    .contact-card {
+      border-radius: 28px;
+      padding: 26px;
+      background: var(--glass);
+      border: 1px solid rgba(255, 255, 255, .64);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(24px) saturate(145%);
+      -webkit-backdrop-filter: blur(24px) saturate(145%);
+    }
+
+    .card,
+    .review {
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .card:hover,
+    .review:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(61, 24, 29, .14);
     }
 
     .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
+      width: 50px;
+      height: 50px;
+      border-radius: 18px;
       display: grid;
       place-items: center;
-      background: rgba(141,20,32,.10);
-      color: var(--wine);
       margin-bottom: 18px;
-      font-size: 1.3rem;
+      color: var(--wine);
+      background: linear-gradient(135deg, rgba(141, 20, 32, .12), rgba(212, 167, 101, .18));
+      font-size: 1.34rem;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
     }
 
-    .card p, .review p, .booking-note, .contact-list { color: var(--muted); }
-    .review p { margin: 10px 0 18px; }
-    .review strong { display: block; }
+    .card p,
+    .review p,
+    .booking-note,
+    .contact-list {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    .review p {
+      margin: 8px 0 18px;
+      font-family: "Playfair Display", Georgia, serif;
+      color: #49363a;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .review strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 850;
+    }
+
+    .review small { color: var(--muted); }
 
     .studio-strip {
+      min-height: 430px;
       border-radius: var(--radius);
-      overflow: hidden;
-      min-height: 420px;
-      background: url("images/selene-studio-glamour.png") center / cover no-repeat;
       position: relative;
+      overflow: hidden;
+      background: url("images/selene-studio-glamour.png") center / cover no-repeat;
       box-shadow: var(--shadow);
+      isolation: isolate;
     }
 
     .studio-strip::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(47,31,34,.68), rgba(47,31,34,.18));
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(34, 18, 21, .78), rgba(34, 18, 21, .28) 58%, rgba(34, 18, 21, .08)),
+        radial-gradient(circle at 28% 72%, rgba(255, 255, 255, .18), transparent 20rem);
     }
 
     .studio-caption {
       position: absolute;
-      z-index: 1;
-      left: clamp(20px, 5vw, 48px);
-      bottom: clamp(20px, 5vw, 42px);
-      max-width: 520px;
-      color: white;
+      left: clamp(22px, 5vw, 52px);
+      bottom: clamp(22px, 5vw, 46px);
+      max-width: 560px;
+      color: #fff;
+      padding: 0;
     }
 
-    .booking { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
-    form { display: grid; gap: 14px; }
-    label { font-weight: 760; font-size: .92rem; }
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid rgba(117,103,107,.22);
-      border-radius: 16px;
-      padding: 13px 14px;
-      background: rgba(255,255,255,.82);
-      font: inherit;
+    .studio-caption p {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .88);
+      font-size: 1.08rem;
+    }
+
+    .booking {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+      padding: clamp(26px, 4vw, 38px);
+    }
+
+    .booking-note { margin: 18px 0 0; }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
       color: var(--ink);
+      font-size: .96rem;
+      font-weight: 800;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(112, 93, 97, .22);
+      border-radius: 18px;
+      padding: 15px 16px;
+      background: rgba(255, 255, 255, .86);
+      color: var(--ink);
+      font: inherit;
+      font-size: 1rem;
       outline: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .76);
     }
-    input:focus, select:focus, textarea:focus { border-color: var(--wine); box-shadow: 0 0 0 4px rgba(141,20,32,.12); }
-    textarea { min-height: 105px; resize: vertical; }
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-    .contact-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 26px; align-items: start; }
-    .contact-list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 12px; }
-    .map-wrap { overflow: hidden; border-radius: 26px; border: 1px solid rgba(255,255,255,.55); box-shadow: var(--shadow); }
-    iframe { width: 100%; height: 410px; border: 0; display: block; }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(141, 20, 32, .62);
+      box-shadow: 0 0 0 4px rgba(141, 20, 32, .10), inset 0 1px 0 rgba(255, 255, 255, .82);
+    }
 
-    footer { padding: 34px 0; border-top: 1px solid rgba(141,20,32,.12); color: var(--muted); font-size: .94rem; }
-    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    textarea {
+      min-height: 118px;
+      resize: vertical;
+    }
 
-    @media (max-width: 900px) {
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-list strong { color: var(--ink); }
+
+    .map-wrap {
+      overflow: hidden;
+      min-height: 410px;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, .64);
+      box-shadow: var(--shadow-soft);
+      background: rgba(255, 255, 255, .68);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 410px;
+      border: 0;
+      display: block;
+    }
+
+    footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
       .nav-links { display: none; }
-      .hero-grid, .booking, .contact-grid { grid-template-columns: 1fr; }
-      .cards, .reviews { grid-template-columns: 1fr; }
-      .section-head { display: block; }
-      .section-head p { margin-top: 14px; }
-      .brand img { width: 132px; }
+      .brand img { width: 150px; }
+      .hero-grid,
+      .booking,
+      .contact-grid,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+      .cards,
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+      .hero-card { justify-self: start; max-width: 100%; }
+      .section-head { gap: 16px; }
     }
 
-    @media (max-width: 560px) {
-      .two { grid-template-columns: 1fr; }
-      section { padding: 50px 0; }
-      .hero { padding: 48px 0; }
-      .hero-panel, .hero-card, .booking { padding: 20px; }
+    @media (max-width: 640px) {
+      html { font-size: 17px; }
+
+      .container {
+        width: min(100% - 24px, 560px);
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .brand img {
+        width: 142px;
+      }
+
+      header .btn {
+        padding: 11px 14px;
+        font-size: .86rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 34px 0 46px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(34, 18, 21, .68), rgba(34, 18, 21, .54)),
+          url("images/selene-studio-glamour.png") center / cover no-repeat;
+      }
+
+      .hero-grid {
+        gap: 18px;
+      }
+
+      .hero-panel,
+      .hero-card,
+      .card,
+      .review,
+      .booking,
+      .contact-card {
+        border-radius: 26px;
+        padding: 22px;
+        background: rgba(255, 250, 244, .84);
+        border: 1px solid rgba(255, 255, 255, .72);
+        box-shadow: 0 18px 54px rgba(61, 24, 29, .14);
+        backdrop-filter: blur(28px) saturate(150%);
+        -webkit-backdrop-filter: blur(28px) saturate(150%);
+      }
+
+      .hero-panel {
+        color: var(--ink);
+        background: rgba(255, 250, 244, .82);
+      }
+
+      .hero-panel .lead {
+        color: var(--muted);
+      }
+
+      .hero-panel .eyebrow,
+      .studio-caption .eyebrow {
+        color: var(--wine-dark);
+        background: rgba(255, 255, 255, .68);
+        border-color: rgba(141, 20, 32, .13);
+      }
+
+      h1 {
+        margin: 18px 0 18px;
+        font-size: clamp(2.7rem, 13vw, 3.85rem);
+        line-height: .98;
+        letter-spacing: -.06em;
+      }
+
+      h2 {
+        font-size: clamp(2.25rem, 10vw, 3.15rem);
+        line-height: 1;
+      }
+
+      h3 {
+        font-size: 1.32rem;
+        line-height: 1.18;
+      }
+
+      .lead,
+      .section-head p,
+      .card p,
+      .review p,
+      .booking-note,
+      .contact-list,
+      input,
+      select,
+      textarea {
+        font-size: 1.06rem;
+        line-height: 1.72;
+      }
+
+      .eyebrow {
+        font-size: .82rem;
+        line-height: 1.35;
+        white-space: normal;
+      }
+
+      .quote-large {
+        font-size: 1.55rem;
+        line-height: 1.28;
+      }
+
+      .stars {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+        padding: 15px 18px;
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .cards,
+      .reviews {
+        gap: 16px;
+      }
+
+      .icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+      }
+
+      .studio-strip {
+        min-height: 380px;
+        border-radius: 26px;
+        background-position: center;
+      }
+
+      .studio-strip::after {
+        background: linear-gradient(180deg, rgba(34, 18, 21, .20), rgba(34, 18, 21, .76));
+      }
+
+      .studio-caption {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: none;
+      }
+
+      .studio-caption p {
+        font-size: 1.04rem;
+        line-height: 1.65;
+      }
+
+      .two {
+        grid-template-columns: 1fr;
+      }
+
+      label {
+        font-size: 1rem;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 16px 17px;
+        border-radius: 18px;
+      }
+
+      .map-wrap,
+      iframe {
+        min-height: 340px;
+      }
+
+      .footer-row {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .brand img { width: 124px; }
+      header .btn { padding: 10px 12px; font-size: .8rem; }
+      h1 { font-size: 2.55rem; }
+      h2 { font-size: 2.12rem; }
+      .hero-panel,
+      .hero-card,
+      .card,
+      .review,
+      .booking,
+      .contact-card { padding: 19px; }
     }
   </style>
 </head>
@@ -275,6 +773,7 @@
       <a class="brand" href="#top" aria-label="Selene bielizna damska">
         <img src="images/selene-logo.png" alt="Selene bielizna damska" />
       </a>
+
       <nav class="nav-links" aria-label="Główna nawigacja">
         <a href="#brafitting">Brafitting</a>
         <a href="#salon">Salon</a>
@@ -282,23 +781,26 @@
         <a href="#umow">Umów wizytę</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
-      <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85." target="_blank" rel="noopener">WhatsApp</a>
+
+      <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85%20w%20Selene." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" aria-label="Selene brafitting Szczecin">
       <div class="container hero-grid">
         <div class="hero-panel">
           <span class="eyebrow">Selene • brafitting i bielizna damska w Szczecinie</span>
-          <h1>Biustonosz, który pasuje do Ciebie. Nie odwrotnie.</h1>
-          <p class="lead">Kameralna konsultacja, cierpliwa rozmowa i fachowy dobór bielizny w salonie, który ma atmosferę ciepłego buduaru i precyzję pracowni na miarę.</p>
+          <h1>Biustonosz, który pasuje do Ciebie.</h1>
+          <p class="lead">Kameralna konsultacja, cierpliwa rozmowa i fachowy dobór bielizny w salonie, który łączy ciepło kobiecego buduaru z precyzją pracowni na miarę.</p>
+
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85." target="_blank" rel="noopener">Umów przez WhatsApp</a>
+            <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85%20w%20Selene." target="_blank" rel="noopener">Umów przez WhatsApp</a>
             <a class="btn secondary" href="#opinie">Zobacz opinie klientek</a>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Wyróżniona opinia">
+
+        <aside class="hero-card" aria-label="Wyróżniona opinia klientki">
           <div class="stars">★★★★★</div>
           <p class="quote-large">„Nareszcie miejsce, w którym dobrałam idealną bieliznę. Fachowo i z uśmiechem.”</p>
           <p class="quote-author">Opinia klientki z Google</p>
@@ -312,10 +814,25 @@
           <h2>Tu zaczyna się wygoda</h2>
           <p>Brafitting to nie tylko rozmiar z metki. To dobór kroju, obwodu, miseczki i konstrukcji do Twojego ciała, stylu życia oraz tego, czego naprawdę potrzebujesz.</p>
         </div>
+
         <div class="cards">
-          <article class="card"><div class="icon">♡</div><h3>Rozmowa bez pośpiechu</h3><p>Najpierw słuchamy: co uwiera, czego brakuje, jaki efekt lubisz i w czym chcesz czuć się swobodnie.</p></article>
-          <article class="card"><div class="icon">✦</div><h3>Dobór do sylwetki</h3><p>Sprawdzamy nie tylko rozmiar, ale też kształt, rozstaw, podtrzymanie i komfort w ruchu.</p></article>
-          <article class="card"><div class="icon">✓</div><h3>Bez presji zakupowej</h3><p>Klientki cenią rzeczowe doradztwo, szczerość i pomoc bez naciągania. Masz wyjść zadowolona.</p></article>
+          <article class="card">
+            <div class="icon">♡</div>
+            <h3>Rozmowa bez pośpiechu</h3>
+            <p>Najpierw słuchamy: co uwiera, czego brakuje, jaki efekt lubisz i w czym chcesz czuć się swobodnie.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">✦</div>
+            <h3>Dobór do sylwetki</h3>
+            <p>Sprawdzamy nie tylko rozmiar, ale też kształt, rozstaw, podtrzymanie i komfort w ruchu.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">✓</div>
+            <h3>Bez presji zakupowej</h3>
+            <p>Klientki cenią rzeczowe doradztwo, szczerość i pomoc bez naciągania. Masz wyjść zadowolona.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -325,7 +842,7 @@
         <div class="studio-caption">
           <span class="eyebrow">Wnętrze salonu</span>
           <h2>Elegancko, kameralnie, z klasą</h2>
-          <p>Jasne światło, ceglane sklepienia i starannie dobrana ekspozycja tworzą przestrzeń, w której łatwiej poczuć się swobodnie.</p>
+          <p>Miękkie światło, ceglane sklepienia i starannie dobrana ekspozycja tworzą przestrzeń, w której łatwiej poczuć się swobodnie.</p>
         </div>
       </div>
     </section>
@@ -336,13 +853,49 @@
           <h2>Klientki wracają po komfort</h2>
           <p>Najczęściej powtarzają się trzy słowa: profesjonalnie, cierpliwie, z uśmiechem. To najlepszy fundament strony wizytówki.</p>
         </div>
+
         <div class="reviews">
-          <article class="review"><div class="stars">★★★★★</div><p>„Cudowny sklep z jeszcze bardziej cudowną właścicielką, która poświęci każdej klientce dużo uwagi.”</p><strong>Karolina Czarnecka</strong><small>Opinia z Google</small></article>
-          <article class="review"><div class="stars">★★★★★</div><p>„Pani zna się na rzeczy, ma świetne podejście do klientki. Atmosfera na luzie, ale rzeczowo.”</p><strong>Arabictree</strong><small>Opinia z Google</small></article>
-          <article class="review"><div class="stars">★★★★★</div><p>„Nigdy nie miałam tak dobrze dobranego stanika. Serdecznie polecam.”</p><strong>Julia</strong><small>Opinia z Google</small></article>
-          <article class="review"><div class="stars">★★★★★</div><p>„Rewelacyjna pomoc w doborze i przymierzaniu. Bez naciągania finansowego.”</p><strong>kbiel</strong><small>Opinia z Google</small></article>
-          <article class="review"><div class="stars">★★★★★</div><p>„Fantastyczna obsługa i produkty wysokiej jakości. Zdecydowanie polecam.”</p><strong>Michalina M.</strong><small>Opinia z Google</small></article>
-          <article class="review"><div class="stars">★★★★★</div><p>„The most professional service. Knowledgeable, friendly and patient.”</p><strong>Marta Cunniffe</strong><small>Opinia z Google</small></article>
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Cudowny sklep z jeszcze bardziej cudowną właścicielką, która poświęci każdej klientce dużo uwagi.”</p>
+            <strong>Karolina Czarnecka</strong>
+            <small>Opinia z Google</small>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Pani zna się na rzeczy, ma świetne podejście do klientki. Atmosfera na luzie, ale rzeczowo.”</p>
+            <strong>Arabictree</strong>
+            <small>Opinia z Google</small>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Nigdy nie miałam tak dobrze dobranego stanika. Serdecznie polecam.”</p>
+            <strong>Julia</strong>
+            <small>Opinia z Google</small>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Rewelacyjna pomoc w doborze i przymierzaniu. Bez naciągania finansowego.”</p>
+            <strong>kbiel</strong>
+            <small>Opinia z Google</small>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„Fantastyczna obsługa i produkty wysokiej jakości. Zdecydowanie polecam.”</p>
+            <strong>Michalina M.</strong>
+            <small>Opinia z Google</small>
+          </article>
+
+          <article class="review">
+            <div class="stars">★★★★★</div>
+            <p>„The most professional service. Knowledgeable, friendly and patient.”</p>
+            <strong>Marta Cunniffe</strong>
+            <small>Opinia z Google</small>
+          </article>
         </div>
       </div>
     </section>
@@ -353,16 +906,51 @@
           <span class="eyebrow">Rezerwacja wizyty</span>
           <h2>Umów brafitting w dogodnym terminie</h2>
           <p class="booking-note">Formularz przygotuje gotową wiadomość na WhatsApp. Klientka wybiera dzień, godzinę i wysyła prośbę o rezerwację bez zakładania konta ani logowania.</p>
+
           <ul class="contact-list">
             <li><strong>Czas wizyty:</strong> ok. 30-45 minut</li>
             <li><strong>Dla kogo:</strong> dla każdej kobiety, niezależnie od wieku i rozmiaru</li>
             <li><strong>Potwierdzenie:</strong> telefonicznie lub przez WhatsApp</li>
           </ul>
         </div>
+
         <form id="bookingForm">
-          <div class="two"><div><label for="name">Imię i nazwisko</label><input id="name" name="name" autocomplete="name" required /></div><div><label for="phone">Telefon</label><input id="phone" name="phone" autocomplete="tel" required /></div></div>
-          <div class="two"><div><label for="date">Preferowany dzień</label><input id="date" name="date" type="date" required /></div><div><label for="time">Preferowana godzina</label><select id="time" name="time" required><option value="">Wybierz godzinę</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option></select></div></div>
-          <div><label for="message">Krótka wiadomość</label><textarea id="message" name="message" placeholder="Np. szukam biustonosza codziennego, po ciąży, sportowego albo nie znam aktualnego rozmiaru."></textarea></div>
+          <div class="two">
+            <div>
+              <label for="name">Imię i nazwisko</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="phone">Telefon</label>
+              <input id="phone" name="phone" autocomplete="tel" required />
+            </div>
+          </div>
+
+          <div class="two">
+            <div>
+              <label for="date">Preferowany dzień</label>
+              <input id="date" name="date" type="date" required />
+            </div>
+            <div>
+              <label for="time">Preferowana godzina</label>
+              <select id="time" name="time" required>
+                <option value="">Wybierz godzinę</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+                <option>17:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="message">Krótka wiadomość</label>
+            <textarea id="message" name="message" placeholder="Np. szukam biustonosza codziennego, po ciąży, sportowego albo nie znam aktualnego rozmiaru."></textarea>
+          </div>
+
           <button class="btn" type="submit">Wyślij prośbę przez WhatsApp</button>
           <small class="booking-note">Kliknięcie otworzy WhatsApp z wypełnioną wiadomością. Termin wymaga potwierdzenia.</small>
         </form>
@@ -374,6 +962,7 @@
         <div class="contact-card">
           <h2>Znajdź nas</h2>
           <p class="lead">Masz pytanie albo chcesz upewnić się, czy dany termin jest dostępny? Zadzwoń lub wyślij wiadomość.</p>
+
           <ul class="contact-list">
             <li><strong>Adres:</strong> Edmunda Bałuki 4, 70-406 Szczecin</li>
             <li><strong>Telefon:</strong> <a href="tel:+48507074902">+48 507 074 902</a></li>
@@ -381,6 +970,7 @@
             <li><strong>Godziny:</strong> wt.-pt. 11:00-18:00, sob. 11:00-16:00, pon. i niedz. zamknięte</li>
           </ul>
         </div>
+
         <div class="map-wrap">
           <iframe title="Mapa dojazdu do Selene" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Edmunda%20Ba%C5%82uki%204%2C%2070-406%20Szczecin&output=embed"></iframe>
         </div>
@@ -414,7 +1004,8 @@
         `Wiadomość: ${data.get("message") || "-"}`,
         "",
         "Proszę o potwierdzenie terminu."
-      ].join("\n");
+      ].join("
+");
 
       window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(body)}`, "_blank");
     });
