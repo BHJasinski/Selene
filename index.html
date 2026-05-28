@@ -463,6 +463,67 @@
       font-size: 1.08rem;
     }
 
+    .expert {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+      padding: clamp(26px, 4vw, 38px);
+      border-radius: var(--radius);
+      background: var(--glass);
+      border: 1px solid rgba(255, 255, 255, .64);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(24px) saturate(145%);
+      -webkit-backdrop-filter: blur(24px) saturate(145%);
+    }
+
+    .expert-photo {
+      position: relative;
+      overflow: hidden;
+      min-height: 440px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      background: #f6ebe5;
+    }
+
+    .expert-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .expert-content p {
+      color: var(--muted);
+      font-size: 1.07rem;
+      line-height: 1.75;
+    }
+
+    .expert-points {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .expert-points li {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .expert-points li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--wine);
+      font-weight: 900;
+    }
+
     .booking {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -582,6 +643,7 @@
       .brand img { width: 150px; }
       .hero-grid,
       .booking,
+      .expert,
       .contact-grid,
       .section-head {
         grid-template-columns: 1fr;
@@ -634,6 +696,7 @@
       .review,
       .booking,
       .contact-card,
+      .expert,
       .step {
         border-radius: 26px;
         padding: 22px;
@@ -767,6 +830,11 @@
         border-radius: 18px;
       }
 
+      .expert-photo,
+      .expert-photo img {
+        min-height: 340px;
+      }
+
       .map-wrap,
       iframe { min-height: 340px; }
 
@@ -788,6 +856,7 @@
       .review,
       .booking,
       .contact-card,
+      .expert,
       .step { padding: 19px; }
     }
   </style>
@@ -802,6 +871,7 @@
       <nav class="nav-links" aria-label="Główna nawigacja">
         <a href="#brafitting">Brafitting</a>
         <a href="#jak-umowic">Jak umówić</a>
+        <a href="#ekspertka">Ekspertka</a>
         <a href="#opinie">Opinie</a>
         <a href="#umow">Umów wizytę</a>
         <a href="#kontakt">Kontakt</a>
@@ -936,6 +1006,25 @@
       </div>
     </section>
 
+    <section id="ekspertka">
+      <div class="container expert">
+        <div class="expert-photo">
+          <img src="images/wlascicielka-selene.png" alt="Właścicielka Selene, ekspertka brafittingu" />
+        </div>
+        <div class="expert-content">
+          <span class="eyebrow">Właścicielka i ekspertka brafittingu</span>
+          <h2>Fachowa pomoc zaczyna się od rozmowy</h2>
+          <p>W Selene każda klientka otrzymuje indywidualną uwagę. Dobór biustonosza nie polega na zgadywaniu rozmiaru, tylko na spokojnym sprawdzeniu, jak bielizna układa się na ciele, czy daje podtrzymanie i czy jest wygodna w codziennym noszeniu.</p>
+          <p>To dobre miejsce, jeśli od dawna nosisz ten sam rozmiar, ale czujesz ucisk, brak podtrzymania, zsuwające się ramiączka albo dyskomfort po całym dniu.</p>
+          <ul class="expert-points">
+            <li>pomoc w doborze rozmiaru i kroju biustonosza,</li>
+            <li>spokojne doradztwo bez pośpiechu i presji,</li>
+            <li>wyjaśnienie, po czym poznać dobrze dobraną bieliznę.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="opinie">
       <div class="container">
         <div class="section-head">
@@ -1060,6 +1149,7 @@
             <li><strong>Adres:</strong> Edmunda Bałuki 4, 70-406 Szczecin</li>
             <li><strong>Telefon:</strong> <a href="tel:+48507074902">+48 507 074 902</a></li>
             <li><strong>WhatsApp:</strong> <a href="https://wa.me/48507074902" target="_blank" rel="noopener">napisz do Selene</a></li>
+            <li><strong>E-mail:</strong> <a href="mailto:bielizna_selene@wp.pl">bielizna_selene@wp.pl</a></li>
             <li><strong>Godziny:</strong> wt.-pt. 11:00-18:00, sob. 11:00-16:00, pon. i niedz. zamknięte</li>
           </ul>
         </div>
