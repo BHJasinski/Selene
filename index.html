@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Selene | Brafitting i bielizna damska w Szczecinie</title>
-  <meta name="description" content="Selene w Szczecinie. Kameralny salon bielizny damskiej, profesjonalny brafitting i wygodna rezerwacja wizyty przez WhatsApp." />
+  <title>Selene | Profesjonalny brafitting i bielizna damska w Szczecinie</title>
+  <meta name="description" content="Selene w Szczecinie. Profesjonalny brafitting, dobór biustonosza, bielizna damska i wygodna rezerwacja wizyty przez WhatsApp lub telefon." />
   <meta name="theme-color" content="#7b111b" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +21,9 @@
       --wine-soft: rgba(141, 20, 32, .12);
       --rose: #d7aaa5;
       --gold: #d4a765;
-      --glass: rgba(255, 250, 244, .78);
+      --glass: rgba(255, 250, 244, .82);
       --glass-dark: rgba(43, 24, 28, .58);
       --line: rgba(141, 20, 32, .13);
-      --white-line: rgba(255, 255, 255, .42);
       --shadow: 0 26px 80px rgba(61, 24, 29, .16);
       --shadow-soft: 0 16px 48px rgba(61, 24, 29, .10);
       --radius: 32px;
@@ -70,23 +69,17 @@
 
     .glass {
       background: var(--glass);
-      border: 1px solid rgba(255, 255, 255, .62);
+      border: 1px solid rgba(255, 255, 255, .64);
       box-shadow: var(--shadow);
       backdrop-filter: blur(24px) saturate(145%);
       -webkit-backdrop-filter: blur(24px) saturate(145%);
-    }
-
-    .lux-title {
-      font-family: "Playfair Display", Georgia, serif;
-      letter-spacing: -.045em;
-      line-height: .98;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 248, 241, .82);
+      background: rgba(255, 248, 241, .86);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(20px) saturate(150%);
       -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -103,7 +96,6 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
       min-width: 0;
     }
 
@@ -169,7 +161,7 @@
     }
 
     .btn.secondary {
-      background: rgba(255, 255, 255, .78);
+      background: rgba(255, 255, 255, .84);
       color: var(--wine-dark);
       box-shadow: inset 0 0 0 1px rgba(141, 20, 32, .18), 0 12px 32px rgba(61, 24, 29, .08);
     }
@@ -181,7 +173,7 @@
       max-width: 100%;
       gap: 9px;
       border: 1px solid rgba(255, 255, 255, .38);
-      background: rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .18);
       padding: 9px 14px;
       border-radius: 999px;
       color: inherit;
@@ -229,7 +221,7 @@
     }
 
     .hero-panel {
-      max-width: 650px;
+      max-width: 690px;
       color: #fff;
       border-radius: var(--radius);
       padding: clamp(28px, 5vw, 52px);
@@ -243,7 +235,7 @@
     h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      margin-bottom: 22px;
+      margin: 18px 0 22px;
       font-family: "Playfair Display", Georgia, serif;
       font-size: clamp(3rem, 6vw, 5.6rem);
       line-height: .96;
@@ -275,8 +267,8 @@
     }
 
     .hero-panel .lead {
-      color: rgba(255, 255, 255, .88);
-      max-width: 590px;
+      color: rgba(255, 255, 255, .90);
+      max-width: 610px;
       font-size: clamp(1.08rem, 1.5vw, 1.22rem);
     }
 
@@ -287,13 +279,27 @@
       margin-top: 30px;
     }
 
+    .quick-info {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+    }
+
+    .quick-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .hero-card {
       justify-self: end;
-      max-width: 440px;
+      max-width: 460px;
       border-radius: var(--radius);
       padding: clamp(24px, 4vw, 34px);
-      background: rgba(255, 250, 244, .82);
-      border: 1px solid rgba(255, 255, 255, .62);
+      background: rgba(255, 250, 244, .86);
+      border: 1px solid rgba(255, 255, 255, .66);
       box-shadow: var(--shadow);
       backdrop-filter: blur(26px) saturate(145%);
       -webkit-backdrop-filter: blur(26px) saturate(145%);
@@ -339,7 +345,8 @@
     }
 
     .cards,
-    .reviews {
+    .reviews,
+    .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -348,7 +355,8 @@
     .card,
     .review,
     .booking,
-    .contact-card {
+    .contact-card,
+    .step {
       border-radius: 28px;
       padding: 26px;
       background: var(--glass);
@@ -359,17 +367,20 @@
     }
 
     .card,
-    .review {
+    .review,
+    .step {
       transition: transform .22s ease, box-shadow .22s ease;
     }
 
     .card:hover,
-    .review:hover {
+    .review:hover,
+    .step:hover {
       transform: translateY(-4px);
       box-shadow: 0 24px 64px rgba(61, 24, 29, .14);
     }
 
-    .icon {
+    .icon,
+    .step-number {
       width: 50px;
       height: 50px;
       border-radius: 18px;
@@ -379,17 +390,27 @@
       color: var(--wine);
       background: linear-gradient(135deg, rgba(141, 20, 32, .12), rgba(212, 167, 101, .18));
       font-size: 1.34rem;
+      font-weight: 900;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
     }
 
     .card p,
     .review p,
     .booking-note,
-    .contact-list {
+    .contact-list,
+    .step p {
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.72;
     }
+
+    .service-list {
+      margin: 18px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .service-list li { margin: 8px 0; }
 
     .review p {
       margin: 8px 0 18px;
@@ -431,14 +452,14 @@
       position: absolute;
       left: clamp(22px, 5vw, 52px);
       bottom: clamp(22px, 5vw, 46px);
-      max-width: 560px;
+      max-width: 620px;
       color: #fff;
       padding: 0;
     }
 
     .studio-caption p {
       margin: 18px 0 0;
-      color: rgba(255, 255, 255, .88);
+      color: rgba(255, 255, 255, .90);
       font-size: 1.08rem;
     }
 
@@ -451,6 +472,16 @@
     }
 
     .booking-note { margin: 18px 0 0; }
+
+    .instruction-box {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(141, 20, 32, .08);
+      border: 1px solid rgba(141, 20, 32, .10);
+      color: var(--ink);
+      font-weight: 700;
+    }
 
     form {
       display: grid;
@@ -472,7 +503,7 @@
       border: 1px solid rgba(112, 93, 97, .22);
       border-radius: 18px;
       padding: 15px 16px;
-      background: rgba(255, 255, 255, .86);
+      background: rgba(255, 255, 255, .90);
       color: var(--ink);
       font: inherit;
       font-size: 1rem;
@@ -556,7 +587,8 @@
         grid-template-columns: 1fr;
       }
       .cards,
-      .reviews {
+      .reviews,
+      .steps {
         grid-template-columns: 1fr;
       }
       .hero-card { justify-self: start; max-width: 100%; }
@@ -594,19 +626,18 @@
           url("images/selene-studio-glamour.png") center / cover no-repeat;
       }
 
-      .hero-grid {
-        gap: 18px;
-      }
+      .hero-grid { gap: 18px; }
 
       .hero-panel,
       .hero-card,
       .card,
       .review,
       .booking,
-      .contact-card {
+      .contact-card,
+      .step {
         border-radius: 26px;
         padding: 22px;
-        background: rgba(255, 250, 244, .84);
+        background: rgba(255, 250, 244, .88);
         border: 1px solid rgba(255, 255, 255, .72);
         box-shadow: 0 18px 54px rgba(61, 24, 29, .14);
         backdrop-filter: blur(28px) saturate(150%);
@@ -615,30 +646,30 @@
 
       .hero-panel {
         color: var(--ink);
-        background: rgba(255, 250, 244, .82);
       }
 
-      .hero-panel .lead {
+      .hero-panel .lead,
+      .quick-info {
         color: var(--muted);
       }
 
       .hero-panel .eyebrow,
       .studio-caption .eyebrow {
         color: var(--wine-dark);
-        background: rgba(255, 255, 255, .68);
+        background: rgba(255, 255, 255, .72);
         border-color: rgba(141, 20, 32, .13);
       }
 
       h1 {
         margin: 18px 0 18px;
-        font-size: clamp(2.7rem, 13vw, 3.85rem);
-        line-height: .98;
-        letter-spacing: -.06em;
+        font-size: clamp(2.55rem, 12vw, 3.65rem);
+        line-height: 1;
+        letter-spacing: -.055em;
       }
 
       h2 {
-        font-size: clamp(2.25rem, 10vw, 3.15rem);
-        line-height: 1;
+        font-size: clamp(2.1rem, 9vw, 3rem);
+        line-height: 1.02;
       }
 
       h3 {
@@ -652,6 +683,8 @@
       .review p,
       .booking-note,
       .contact-list,
+      .step p,
+      .service-list,
       input,
       select,
       textarea {
@@ -684,21 +717,19 @@
 
       .btn {
         width: 100%;
-        min-height: 52px;
+        min-height: 54px;
         padding: 15px 18px;
         font-size: 1rem;
       }
 
-      section {
-        padding: 56px 0;
-      }
+      section { padding: 56px 0; }
 
       .cards,
-      .reviews {
-        gap: 16px;
-      }
+      .reviews,
+      .steps { gap: 16px; }
 
-      .icon {
+      .icon,
+      .step-number {
         width: 46px;
         height: 46px;
         border-radius: 16px;
@@ -726,13 +757,8 @@
         line-height: 1.65;
       }
 
-      .two {
-        grid-template-columns: 1fr;
-      }
-
-      label {
-        font-size: 1rem;
-      }
+      .two { grid-template-columns: 1fr; }
+      label { font-size: 1rem; }
 
       input,
       select,
@@ -742,9 +768,7 @@
       }
 
       .map-wrap,
-      iframe {
-        min-height: 340px;
-      }
+      iframe { min-height: 340px; }
 
       .footer-row {
         display: grid;
@@ -756,14 +780,15 @@
     @media (max-width: 390px) {
       .brand img { width: 124px; }
       header .btn { padding: 10px 12px; font-size: .8rem; }
-      h1 { font-size: 2.55rem; }
-      h2 { font-size: 2.12rem; }
+      h1 { font-size: 2.42rem; }
+      h2 { font-size: 2.05rem; }
       .hero-panel,
       .hero-card,
       .card,
       .review,
       .booking,
-      .contact-card { padding: 19px; }
+      .contact-card,
+      .step { padding: 19px; }
     }
   </style>
 </head>
@@ -776,7 +801,7 @@
 
       <nav class="nav-links" aria-label="Główna nawigacja">
         <a href="#brafitting">Brafitting</a>
-        <a href="#salon">Salon</a>
+        <a href="#jak-umowic">Jak umówić</a>
         <a href="#opinie">Opinie</a>
         <a href="#umow">Umów wizytę</a>
         <a href="#kontakt">Kontakt</a>
@@ -787,16 +812,22 @@
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="Selene brafitting Szczecin">
+    <section class="hero" aria-label="Selene profesjonalny brafitting Szczecin">
       <div class="container hero-grid">
         <div class="hero-panel">
-          <span class="eyebrow">Selene • brafitting i bielizna damska w Szczecinie</span>
-          <h1>Biustonosz, który pasuje do Ciebie.</h1>
-          <p class="lead">Kameralna konsultacja, cierpliwa rozmowa i fachowy dobór bielizny w salonie, który łączy ciepło kobiecego buduaru z precyzją pracowni na miarę.</p>
+          <span class="eyebrow">Profesjonalny brafitting w Szczecinie</span>
+          <h1>Dobierz biustonosz wygodnie, fachowo i bez skrępowania.</h1>
+          <p class="lead">W Selene pomagamy dobrać biustonosz do sylwetki, potrzeb i codziennego komfortu. Szczególnie zapraszamy kobiety, które czują, że obecna bielizna uciska, przesuwa się, źle podtrzymuje albo po prostu przestała być wygodna.</p>
 
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/48507074902?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82abym%20um%C3%B3wi%C4%87%20wizyt%C4%99%20brafittingow%C4%85%20w%20Selene." target="_blank" rel="noopener">Umów przez WhatsApp</a>
-            <a class="btn secondary" href="#opinie">Zobacz opinie klientek</a>
+            <a class="btn" href="#umow">Chcę umówić wizytę</a>
+            <a class="btn secondary" href="tel:+48507074902">Zadzwoń: 507 074 902</a>
+          </div>
+
+          <div class="quick-info" aria-label="Najważniejsze informacje">
+            <span>✓ Wizyta trwa około 30-45 minut</span>
+            <span>✓ Możesz przyjść bez znajomości swojego rozmiaru</span>
+            <span>✓ Termin potwierdzamy telefonicznie lub przez WhatsApp</span>
           </div>
         </div>
 
@@ -811,27 +842,85 @@
     <section id="brafitting">
       <div class="container">
         <div class="section-head">
-          <h2>Tu zaczyna się wygoda</h2>
-          <p>Brafitting to nie tylko rozmiar z metki. To dobór kroju, obwodu, miseczki i konstrukcji do Twojego ciała, stylu życia oraz tego, czego naprawdę potrzebujesz.</p>
+          <h2>Na czym polega brafitting?</h2>
+          <p>Brafitting to fachowy dobór biustonosza: odpowiedniego obwodu, miseczki, kroju i podtrzymania. Celem jest wygoda, lepsza postawa i bielizna, która dobrze leży przez cały dzień.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">1</div>
+            <h3>Sprawdzamy obecne dopasowanie</h3>
+            <p>Patrzymy, czy obwód dobrze trzyma, czy miseczka obejmuje biust, czy ramiączka nie przejmują całego ciężaru i czy nic nie uciska.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">2</div>
+            <h3>Dobieramy rozmiar i krój</h3>
+            <p>Dobieramy biustonosz do kształtu biustu, sylwetki i zastosowania: na co dzień, pod elegancką odzież, do pracy, po zmianie wagi lub po ciąży.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">3</div>
+            <h3>Uczymy, na co zwracać uwagę</h3>
+            <p>Pokazujemy, jak rozpoznać dobrze dobrany biustonosz i jak samodzielnie ocenić, czy leży prawidłowo podczas noszenia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="uslugi">
+      <div class="container">
+        <div class="section-head">
+          <h2>W czym możemy pomóc?</h2>
+          <p>Do salonu warto przyjść nie tylko po zakup nowej bielizny. Warto przyjść wtedy, gdy biustonosz przeszkadza, nie podtrzymuje albo nie pasuje do zmieniającego się ciała.</p>
         </div>
 
         <div class="cards">
           <article class="card">
             <div class="icon">♡</div>
-            <h3>Rozmowa bez pośpiechu</h3>
-            <p>Najpierw słuchamy: co uwiera, czego brakuje, jaki efekt lubisz i w czym chcesz czuć się swobodnie.</p>
+            <h3>Dobór biustonosza codziennego</h3>
+            <p>Pomagamy wybrać wygodny model do noszenia na co dzień: stabilny, miękki dla ciała i dopasowany do Twojej garderoby.</p>
           </article>
 
           <article class="card">
             <div class="icon">✦</div>
-            <h3>Dobór do sylwetki</h3>
-            <p>Sprawdzamy nie tylko rozmiar, ale też kształt, rozstaw, podtrzymanie i komfort w ruchu.</p>
+            <h3>Brafitting po zmianach sylwetki</h3>
+            <p>Warto umówić wizytę po zmianie wagi, po ciąży, w okresie menopauzy lub wtedy, gdy dotychczasowy rozmiar przestał być komfortowy.</p>
           </article>
 
           <article class="card">
             <div class="icon">✓</div>
-            <h3>Bez presji zakupowej</h3>
-            <p>Klientki cenią rzeczowe doradztwo, szczerość i pomoc bez naciągania. Masz wyjść zadowolona.</p>
+            <h3>Dobór do konkretnych potrzeb</h3>
+            <p>Szukasz bielizny pod sukienkę, do pracy, na większy biust, pod jasną bluzkę albo na wyjątkową okazję? Doradzimy spokojnie i rzeczowo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="jak-umowic">
+      <div class="container">
+        <div class="section-head">
+          <h2>Jak umówić wizytę?</h2>
+          <p>Wystarczy wybrać jedną z dwóch prostych form kontaktu. Nie musisz znać swojego rozmiaru ani przygotowywać się do wizyty.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Wypełnij formularz</h3>
+            <p>Wpisz imię, telefon, preferowany dzień i godzinę. Formularz znajduje się niżej na stronie.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>Wyślij wiadomość przez WhatsApp</h3>
+            <p>Po kliknięciu przycisku otworzy się gotowa wiadomość. Wystarczy ją wysłać.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Poczekaj na potwierdzenie</h3>
+            <p>Odpowiemy i potwierdzimy termin. Możesz też od razu zadzwonić pod numer 507 074 902.</p>
           </article>
         </div>
       </div>
@@ -840,9 +929,9 @@
     <section id="salon">
       <div class="container studio-strip">
         <div class="studio-caption">
-          <span class="eyebrow">Wnętrze salonu</span>
-          <h2>Elegancko, kameralnie, z klasą</h2>
-          <p>Miękkie światło, ceglane sklepienia i starannie dobrana ekspozycja tworzą przestrzeń, w której łatwiej poczuć się swobodnie.</p>
+          <span class="eyebrow">Selene przy Edmunda Bałuki 4</span>
+          <h2>Spokojna wizyta, fachowa pomoc</h2>
+          <p>W salonie możesz liczyć na cierpliwe doradztwo, dyskrecję i jasne wyjaśnienie, dlaczego dany model dobrze leży lub dlaczego warto szukać dalej.</p>
         </div>
       </div>
     </section>
@@ -850,8 +939,8 @@
     <section id="opinie">
       <div class="container">
         <div class="section-head">
-          <h2>Klientki wracają po komfort</h2>
-          <p>Najczęściej powtarzają się trzy słowa: profesjonalnie, cierpliwie, z uśmiechem. To najlepszy fundament strony wizytówki.</p>
+          <h2>Klientki cenią fachowość i cierpliwość</h2>
+          <p>W opiniach najczęściej powtarza się profesjonalna pomoc, dobre dobranie rozmiaru, miła obsługa i poczucie, że nikt nie pośpiesza klientki.</p>
         </div>
 
         <div class="reviews">
@@ -904,12 +993,16 @@
       <div class="container booking">
         <div>
           <span class="eyebrow">Rezerwacja wizyty</span>
-          <h2>Umów brafitting w dogodnym terminie</h2>
-          <p class="booking-note">Formularz przygotuje gotową wiadomość na WhatsApp. Klientka wybiera dzień, godzinę i wysyła prośbę o rezerwację bez zakładania konta ani logowania.</p>
+          <h2>Umów wizytę brafittingową</h2>
+          <p class="booking-note">Wypełnij krótki formularz. Po kliknięciu przycisku otworzy się WhatsApp z gotową wiadomością do Selene. Wyślij ją, a my potwierdzimy termin.</p>
+
+          <div class="instruction-box">
+            Nie korzystasz z WhatsApp? Zadzwoń: <a href="tel:+48507074902">507 074 902</a>.
+          </div>
 
           <ul class="contact-list">
-            <li><strong>Czas wizyty:</strong> ok. 30-45 minut</li>
-            <li><strong>Dla kogo:</strong> dla każdej kobiety, niezależnie od wieku i rozmiaru</li>
+            <li><strong>Czas wizyty:</strong> około 30-45 minut</li>
+            <li><strong>Co zabrać:</strong> możesz zabrać obecny biustonosz, jeśli chcesz sprawdzić dopasowanie</li>
             <li><strong>Potwierdzenie:</strong> telefonicznie lub przez WhatsApp</li>
           </ul>
         </div>
@@ -947,12 +1040,12 @@
           </div>
 
           <div>
-            <label for="message">Krótka wiadomość</label>
-            <textarea id="message" name="message" placeholder="Np. szukam biustonosza codziennego, po ciąży, sportowego albo nie znam aktualnego rozmiaru."></textarea>
+            <label for="message">Krótka wiadomość, opcjonalnie</label>
+            <textarea id="message" name="message" placeholder="Np. chcę dobrać biustonosz codzienny, nie znam rozmiaru, obecny model mnie uciska albo szukam czegoś pod sukienkę."></textarea>
           </div>
 
           <button class="btn" type="submit">Wyślij prośbę przez WhatsApp</button>
-          <small class="booking-note">Kliknięcie otworzy WhatsApp z wypełnioną wiadomością. Termin wymaga potwierdzenia.</small>
+          <small class="booking-note">Po wysłaniu wiadomości termin wymaga potwierdzenia przez Selene.</small>
         </form>
       </div>
     </section>
@@ -960,8 +1053,8 @@
     <section id="kontakt">
       <div class="container contact-grid">
         <div class="contact-card">
-          <h2>Znajdź nas</h2>
-          <p class="lead">Masz pytanie albo chcesz upewnić się, czy dany termin jest dostępny? Zadzwoń lub wyślij wiadomość.</p>
+          <h2>Kontakt i dojazd</h2>
+          <p class="lead">Salon znajduje się w centrum Szczecina. Możesz umówić wizytę przez formularz, WhatsApp albo telefonicznie.</p>
 
           <ul class="contact-list">
             <li><strong>Adres:</strong> Edmunda Bałuki 4, 70-406 Szczecin</li>
@@ -981,7 +1074,7 @@
   <footer>
     <div class="container footer-row">
       <span>© <span id="year"></span> Selene</span>
-      <span>Bielizna damska • brafitting • Szczecin</span>
+      <span>Profesjonalny brafitting • bielizna damska • Szczecin</span>
     </div>
   </footer>
 
